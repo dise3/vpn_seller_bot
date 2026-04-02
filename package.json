@@ -6,7 +6,7 @@
   "main": "src/bot.ts",
   "scripts": {
     "dev": "nodemon --exec tsx src/bot.ts",
-    "start": "node --loader ts-node/esm src/bot.ts",
+    "start": "tsx src/bot.ts",
     "build": "tsc"
   },
   "keywords": [],
