@@ -7,6 +7,10 @@ import YooCheckout from "yookassa";
 import { authenticate, generateAccess, getServerStats } from "./generator";
 import { CronJob } from "cron";
 import path from "path";
+import {fileURLToPath} from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -412,7 +416,7 @@ bot.action("my_keys", async (ctx) => {
     const userId = ctx.from!.id;
 
     // Укажи правильный путь к твоему фото
-    const photoPath = '/home/dise33/Desktop/bot_vpn/src/photo/start.jpg'; 
+    const photoPath = path.join(__dirname, 'photo', 'keys.jpg');
 
     try {
         const subs = await db.all(
