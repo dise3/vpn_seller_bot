@@ -52,7 +52,7 @@ export async function generateAccess(tgUserId: number | string, username: string
             throw new Error("Не удалось получить список подключений");
         }
 
-        const MAX_PER_INBOUND = 100; // Увеличил лимит, раз ты работаешь с TLS
+        const MAX_PER_INBOUND = 25; // Увеличил лимит, раз ты работаешь с TLS
 
         // 1. Ищем свободный VLESS + TLS Inbound
         const targetInbound = inbounds.find((i: any) => {
